@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gerador de Piadas Aleatórias</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container" role="main">
+    <h1>Gerador de Piadas</h1>
+
+    <section class="card" aria-labelledby="joke-title">
+      <h2 id="joke-title">Piada aleatória</h2>
+
+      <div class="output-row">
+        <textarea id="jokeOutput" class="password-output" readonly rows="3" aria-live="polite"></textarea>
+        <button id="copyJokeBtn" class="btn small" title="Copiar para área de transferência">Copiar</button>
+      </div>
+
+      <div class="controls">
+        <div class="buttons-row">
+          <button id="newJokeBtn" class="btn primary">Nova piada</button>
+          <button id="anotherBtn" class="btn">Outra</button>
+        </div>
+
+        <label class="label"><input id="explicit" type="checkbox" /> Incluir conteúdo potencialmente explícito</label>
+
+        <div id="status" class="strength-text" aria-live="polite">Clique em "Nova piada" para começar.</div>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="about-joke">
+      <h2 id="about-joke">Sobre</h2>
+      <p>Esta página busca piadas de APIs públicas (primeiro icanhazdadjoke, com fallback para JokeAPI). As piadas são carregadas no cliente via fetch; nenhuma piada é armazenada no servidor.</p>
+      <ul>
+        <li>Algumas APIs retornam piadas em inglês — caso queira apenas em português, posso adaptar com tradução automática.</li>
+        <li>Se a API falhar, uma mensagem de erro aparecerá.</li>
+      </ul>
+    </section>
+
+    <footer>
+      <small>Feito com APIs públicas • Código aberto</small>
+    </footer>
+  </main>
+
+  <script src="joke.js" defer></script>
+</body>
+</html>
