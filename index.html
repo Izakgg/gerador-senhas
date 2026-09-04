@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gerador de Senhas Seguras</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container" role="main">
+    <h1>Gerador de Senhas Seguras</h1>
+
+    <section class="card" aria-labelledby="generator-title">
+      <h2 id="generator-title">Gerador</h2>
+
+      <label for="passwordOutput" class="label">Senha gerada</label>
+      <div class="output-row">
+        <input id="passwordOutput" class="password-output" type="text" readonly aria-live="polite" />
+        <button id="copyBtn" class="btn small" title="Copiar para área de transferência">Copiar</button>
+      </div>
+
+      <div class="controls">
+        <label for="lengthRange">Tamanho: <span id="lengthValue">16</span></label>
+        <input id="lengthRange" type="range" min="6" max="64" value="16" />
+
+        <fieldset class="options" aria-label="Opções de caracteres">
+          <legend>Incluir</legend>
+          <label><input id="lowercase" type="checkbox" checked /> Letras minúsculas (a-z)</label>
+          <label><input id="uppercase" type="checkbox" checked /> Letras maiúsculas (A-Z)</label>
+          <label><input id="numbers" type="checkbox" checked /> Números (0-9)</label>
+          <label><input id="symbols" type="checkbox" checked /> Símbolos (!@#$...)</label>
+          <label><input id="avoidAmbiguous" type="checkbox" /> Evitar caracteres ambíguos (0,O,l,1)</label>
+        </fieldset>
+
+        <div class="buttons-row">
+          <button id="generateBtn" class="btn primary">Gerar</button>
+          <button id="regenerateBtn" class="btn" title="Gerar nova com mesmas opções">Regenerar</button>
+        </div>
+
+        <div class="strength" aria-hidden="false">
+          <label>Força estimada:</label>
+          <div class="meter" aria-hidden="true">
+            <div id="strengthBar" class="bar"></div>
+          </div>
+          <div id="strengthText" class="strength-text" aria-live="polite">—</div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="about-title">
+      <h2 id="about-title">Sobre</h2>
+      <p>Este gerador usa a API segura do navegador para criar senhas aleatórias. Ajuste o comprimento e os conjuntos de caracteres para equilibrar usabilidade e segurança.</p>
+      <ul>
+        <li>Recomendado: 12 caracteres ou mais para senhas humanas; 16+ para senhas aleatórias de alto risco.</li>
+        <li>Use um gerenciador de senhas quando possível.</li>
+      </ul>
+    </section>
+
+    <footer>
+      <small>Feito com segurança no navegador • Código aberto</small>
+    </footer>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
